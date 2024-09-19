@@ -1,0 +1,17 @@
+* {
+  font-family: 'Roboto', sans-serif;
+}
+
+.chakra-modal__content {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+/* overriding text-decoration from a tag */
+.css-spn4bz:hover{
+  text-decoration: none !important;
+}
+
+option {
+  background-color: #26282a !important;
+}
