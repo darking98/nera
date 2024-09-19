@@ -42,6 +42,8 @@ const Register = () => {
     })
   })
 
+  const canSubmit = methods.watch('account_number') && methods.watch('name')
+
   return (
     <FormProvider {...methods}>
       <form onSubmit={action}>
@@ -51,7 +53,12 @@ const Register = () => {
         <Box mb={2}>
           <Input name='account_number' label='Número de cuenta' type='number' />
         </Box>
-        <Button width='100%' isLoading={isSendingForm} type='submit'>
+        <Button
+          isDisabled={!canSubmit}
+          width='100%'
+          isLoading={isSendingForm}
+          type='submit'
+        >
           Registrarme
         </Button>
       </form>

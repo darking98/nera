@@ -35,13 +35,20 @@ const Login = () => {
     })
   })
 
+  const canSubmit = methods.watch('account_number')
+
   return (
     <FormProvider {...methods}>
       <form onSubmit={action}>
         <Box mb={2}>
           <Input name='account_number' label='Número de cuenta' type='number' />
         </Box>
-        <Button width='100%' isLoading={isSendingForm} type='submit'>
+        <Button
+          isDisabled={!canSubmit}
+          width='100%'
+          isLoading={isSendingForm}
+          type='submit'
+        >
           Ingresar
         </Button>
       </form>

@@ -52,12 +52,15 @@ export const login = async ({
       .from('accounts')
       .select('id')
       .eq('account_number', accountNumber)
+      .single()
     if (error) {
+      if (error.code === 'PGRST116') {
+        return { errorMessage: 'El número de cuenta no existe' }
+      }
       return { errorMessage: error.message }
     }
-    console.log(data[0])
-    cookieStore.set('user', JSON.stringify(data[0]))
-    return { data: data[0] }
+    cookieStore.set('user', JSON.stringify(data))
+    return { data: data }
   } catch (error: any) {
     return { errorMessage: error.msg || 'Algo salió mal' }
   }

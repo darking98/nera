@@ -6,6 +6,11 @@ export async function middleware(request: NextRequest) {
     const user = await getUser()
 
     // Manejo de rutas con autenticación
+
+    // manejo de ruta raíz, se lo redirige directamente al login
+    if (request.nextUrl.pathname === '/') {
+      return NextResponse.redirect(new URL('/login', request.url))
+    }
     // manejo de ruta login
     if (!user) {
       if (request.nextUrl.pathname !== '/login') {
@@ -33,5 +38,5 @@ export async function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/login', '/dashboard']
+  matcher: ['/login', '/dashboard', '/']
 }

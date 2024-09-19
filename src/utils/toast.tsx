@@ -53,8 +53,6 @@ class ToastInstance {
   }
 
   fire({ title, text, status, duration }: ToastProps) {
-    console.log(colors[status])
-
     this.toastId = this.toast.toast({
       position: 'bottom',
       duration,
