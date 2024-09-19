@@ -18,7 +18,7 @@ git checkout only-nextjs
 ```
 npm install
 ```
-4. Set up the environment variables using the .env.local.template file
+4. Set up the environment variables using the .env.local.template file by creating a .env.local file
 5. Start the development server
 ```
 npm run dev
