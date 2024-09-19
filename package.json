@@ -7,7 +7,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "node server/server.js",
-    "lint": "next lint"
+    "frontend": "next dev",
+    "backend": "node server/server.js",
+    "dev:all": "concurrently \"npm run frontend\" \"npm run backend\"",
+    "start:frontend": "next start",
+    "prod:all": "concurrently \"npm run start:frontend\" \"npm run backend\""
   },
   "dependencies": {
     "@chakra-ui/react": "^2.8.2",
@@ -32,6 +36,7 @@
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "concurrently": "^9.0.1",
     "eslint": "^8",
     "eslint-config-next": "14.2.11",
     "supabase": "^1.192.5",
