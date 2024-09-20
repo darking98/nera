@@ -2,6 +2,12 @@
 
 This repository contains two branches with different setups for the backend and frontend.
 
+How to begin start using the app.
+
+1. Go to localhost:3000/login
+2. Click on 'Registrar' and create an account. 'Nombre' (could be whatever you want) and 'Número de cuenta' (need to be 10 characters in length e.g '1234567891')
+3. Dive into the dashboard starting by using the three different actions on the left side
+
 ## only-nextjs
 
 In this branch, both the backend and frontend are built entirely with Next.js. Supabase is integrated directly into the project through the @supabase/supabase-js dependency, which is used in the server actions.
